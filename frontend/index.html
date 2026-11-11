@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10261f">
+  <meta name="description" content="MedAsist, asistente educativo para estudiar medicina.">
+  <title>MedAsist · Asistente de estudio</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./config.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <a class="brand" href="./"><span class="logo" aria-hidden="true">M</span><span><strong>MedAsist</strong><small>Asistente de estudio</small></span></a>
+    <div class="status" id="status" role="status"><i></i><span>Verificando conexión…</span></div>
+  </header>
+  <main>
+    <section class="welcome">
+      <p class="eyebrow">ESTUDIO Y CONSULTA GENERAL</p>
+      <h1>Hola, ¿qué querés aprender hoy?</h1>
+      <p class="sub">Repasá medicina y ciencias de la salud con explicaciones claras.</p>
+      <div class="suggestions" aria-label="Preguntas sugeridas">
+        <button type="button">Explicame la diferencia entre mitosis y meiosis</button>
+        <button type="button">¿Cómo funciona la presión arterial?</button>
+        <button type="button">Ayudame a organizar un tema para estudiar</button>
+      </div>
+    </section>
+    <section class="chat" aria-label="Conversación">
+      <header class="chat-head"><span><b class="mini-logo">M</b><strong>MedAsist</strong></span><button id="clear" type="button" class="quiet">Limpiar chat</button></header>
+      <div id="messages" class="messages" role="log" aria-live="polite">
+        <article class="message assistant"><b class="avatar" aria-hidden="true">M</b><div class="bubble"><p>¡Hola! Puedo ayudarte a estudiar y a comprender información general de salud.</p><button class="listen" type="button">▶ Escuchar</button></div></article>
+      </div>
+      <form id="form" class="composer">
+        <label class="sr-only" for="prompt">Escribí tu consulta</label>
+        <textarea id="prompt" rows="2" maxlength="4000" placeholder="Escribí tu consulta…" required></textarea>
+        <div class="actions"><span>Enter para enviar · Shift + Enter para nueva línea</span><div>
+          <button id="mic" class="mic" type="button" aria-label="Dictar consulta" title="Dictar por voz">🎙</button>
+          <button id="send" class="send" type="submit">Enviar <span aria-hidden="true">↑</span></button>
+        </div></div>
+        <p id="micStatus" class="mic-status" aria-live="polite"></p>
+      </form>
+    </section>
+    <p class="notice"><strong>Importante:</strong> Ayuda educativa; no reemplaza la atención profesional. No ingreses datos personales ni información que identifique pacientes. Ante una urgencia, contactá emergencias de tu zona.</p>
+  </main>
+  <footer>MedAsist · Prototipo en desarrollo</footer>
+</div>
+</body>
+</html>
